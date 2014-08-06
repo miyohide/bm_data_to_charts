@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Experiment at:</strong>
+  <%= @experiment.experiment_at %>
+</p>
+
+<p>
+  <strong>Ruby type:</strong>
+  <%= @experiment.ruby_type %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @experiment.note %>
+</p>
+
+<%= link_to 'Edit', edit_experiment_path(@experiment) %> |
+<%= link_to 'Back', experiments_path %>
