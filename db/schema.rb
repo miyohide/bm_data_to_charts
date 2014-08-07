@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805132306) do
+ActiveRecord::Schema.define(version: 20140806125856) do
 
   create_table "experiments", force: true do |t|
     t.datetime "experiment_at"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 20140805132306) do
     t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "dstat_file_file_name"
+    t.string   "dstat_file_content_type"
+    t.integer  "dstat_file_file_size"
+    t.datetime "dstat_file_updated_at"
   end
 
 end

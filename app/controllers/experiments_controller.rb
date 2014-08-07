@@ -72,6 +72,6 @@ class ExperimentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def experiment_params
-      params.require(:experiment).permit(:experiment_at, :ruby_type, :note)
+      params.require(:experiment).permit(:experiment_at, :ruby_type, :note, :dstat_file)
     end
 end
