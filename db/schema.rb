@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806125856) do
+ActiveRecord::Schema.define(version: 20140806130919) do
+
+  create_table "experiment_details", force: true do |t|
+    t.integer  "experiment_id"
+    t.float    "cpu0"
+    t.float    "cpu1"
+    t.float    "cpu2"
+    t.float    "cpu3"
+    t.float    "cpu4"
+    t.float    "cpu5"
+    t.float    "cpu6"
+    t.float    "cpu7"
+    t.float    "memory"
+    t.datetime "dstat_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "experiment_details", ["experiment_id"], name: "index_experiment_details_on_experiment_id"
 
   create_table "experiments", force: true do |t|
     t.datetime "experiment_at"
@@ -19,10 +37,10 @@ ActiveRecord::Schema.define(version: 20140806125856) do
     t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "dstat_file_file_name"
-    t.string   "dstat_file_content_type"
-    t.integer  "dstat_file_file_size"
-    t.datetime "dstat_file_updated_at"
+    t.string   "dstat_data_file_name"
+    t.string   "dstat_data_content_type"
+    t.integer  "dstat_data_file_size"
+    t.datetime "dstat_data_updated_at"
   end
 
 end
