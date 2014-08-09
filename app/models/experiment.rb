@@ -4,4 +4,5 @@ class Experiment < ActiveRecord::Base
       content_type: { content_type: ["text/csv", "application/vnd.ms-excel"] },
       size: { in: 0..1.megabytes }
 
+   has_many :experiment_details
 end
