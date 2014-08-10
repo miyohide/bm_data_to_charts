@@ -15,6 +15,7 @@ gem 'spring',        group: :development
 
 gem "chartkick"
 gem "paperclip", "~> 4.1"
+gem "sidekiq"
 
 group :development, :test do
    gem "rspec-rails", "~> 2.14.0"
