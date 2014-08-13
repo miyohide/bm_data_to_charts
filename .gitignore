@@ -17,4 +17,5 @@
 /vendor/bundle
 Gemfile.lock
 /public/system
+dump.rdb
 
