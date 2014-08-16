@@ -5,9 +5,6 @@ class ExperimentsController < ApplicationController
   # GET /experiments.json
   def index
     @experiments = Experiment.all
-    @graph_data = [["2014/8/1 12:00", 0.0], ["2014/8/1 12:01", 10.0],
-                   ["2014/8/1 12:02", 98.0], ["2014/8/1 12:03", 52.1],
-                   ["2014/8/1 12:04", 62.1], ["2014/8/1 12:05", 1.2]]
   end
 
   # GET /experiments/1
