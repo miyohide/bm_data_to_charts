@@ -6,4 +6,8 @@ class Experiment < ActiveRecord::Base
       size: { in: 0..1.megabytes }
 
    has_many :experiment_details
+
+   def memory_datas
+      self.experiment_details.map { |ed| [ed.dstat_date, ed.memory] }
+   end
 end

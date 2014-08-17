@@ -10,6 +10,7 @@ class ExperimentsController < ApplicationController
   # GET /experiments/1
   # GET /experiments/1.json
   def show
+     @graph_data = @experiment.memory_datas
   end
 
   # GET /experiments/new
