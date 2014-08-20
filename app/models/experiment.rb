@@ -10,4 +10,13 @@ class Experiment < ActiveRecord::Base
    def memory_datas
       self.experiment_details.map { |ed| [ed.dstat_date, ed.memory] }
    end
+
+   def cpu_datas(cpu_number)
+      if cpu_number.between?(0,7)
+         self.experiment_details.map { |ed| [ed.dstat_date, ed.send("cpu#{cpu_number}")] }
+      else
+         []
+      end
+   end
 end
+
