@@ -2,16 +2,16 @@
 
 FactoryGirl.define do
   factory :experiment_detail do
-    experiment nil
-    cpu0 1.5
-    cpu1 1.5
-    cpu2 1.5
-    cpu3 1.5
-    cpu4 1.5
-    cpu5 1.5
-    cpu6 1.5
-    cpu7 1.5
-    memory 1.5
+    association :experiment
+    cpu0 0.0
+    cpu1 1.1
+    cpu2 2.2
+    cpu3 3.3
+    cpu4 4.4
+    cpu5 5.5
+    cpu6 6.6
+    cpu7 7.7
+    memory 8.8
     dstat_date "2014-08-06 22:09:19"
   end
 end
