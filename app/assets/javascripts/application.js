@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require moment
+//= require bootstrap-datetimepicker
+//= require moment/ja
 //= require bootstrap-sprockets
-//= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.ja.js
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
