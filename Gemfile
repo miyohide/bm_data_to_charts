@@ -19,7 +19,8 @@ gem "sidekiq"
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
-gem 'bootstrap-datepicker-rails'
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.1.2'
 
 group :development, :test do
    gem "rspec-rails", "~> 2.14.0"
