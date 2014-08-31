@@ -4,7 +4,7 @@ class CsvParser
    def perform(experiment_id)
       CSV.foreach(Experiment.find(experiment_id).dstat_data.path) do |row|
          next if row.size < 50 || row[0] !~ /^\d/
-         dstat_date = DateTime.strptime(row[0], "%d-%m %H:%M:%S")
+         dstat_date = DateTime.strptime(row[0] + "+0900", "%d-%m %H:%M:%S %z")
 
          ExperimentDetail.create(
             experiment_id: experiment_id,
