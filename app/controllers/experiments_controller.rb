@@ -25,7 +25,10 @@ class ExperimentsController < ApplicationController
   # POST /experiments
   # POST /experiments.json
   def create
-    @experiment = Experiment.new(experiment_params)
+     work_params = experiment_params
+     work_params[:experiment_at] = 
+        DateTime.strptime(work_params[:experiment_at] + " +0900", "%m/%d/%Y %I:%M %p %z")
+    @experiment = Experiment.new(work_params)
 
     respond_to do |format|
       if @experiment.save
