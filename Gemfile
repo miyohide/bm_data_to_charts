@@ -25,6 +25,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 3.1.2'
 group :development, :test do
    gem "rspec-rails", "~> 2.14.0"
    gem "factory_girl_rails", "~> 4.2.1"
+   gem "shoulda-matchers", require: false
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
