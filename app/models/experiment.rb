@@ -3,9 +3,9 @@ class Experiment < ActiveRecord::Base
    validates_attachment :dstat_data,
       presence: true,
       content_type: { content_type: ["text/csv", "application/vnd.ms-excel"] },
-      size: { in: 0..1.megabytes }
+      size: { in: 0..5.megabytes }
 
-   has_many :experiment_details
+   has_many :experiment_details, dependent: :destroy
 
    def memory_datas
       self.experiment_details.map { |ed| [ed.dstat_date, ed.memory] }
