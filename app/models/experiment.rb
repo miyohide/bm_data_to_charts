@@ -18,5 +18,9 @@ class Experiment < ActiveRecord::Base
          []
       end
    end
+
+   def total_cpu_datas
+      self.experiment_details.map { |ed| [ed.dstat_date, ed.cpu0 + ed.cpu1 + ed.cpu2 + ed.cpu3+ ed.cpu4 + ed.cpu5 + ed.cpu6 + ed.cpu7] }
+   end
 end
 

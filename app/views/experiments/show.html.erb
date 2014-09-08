@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<%= line_chart @graph_data %>
+<h1>Memory Usage:</h1>
+<%= line_chart @graph_data, min: 950, max: 8000 %>
+
+<h1>Total CPU:</h1>
+<%= line_chart @total_cpu_graph, min: 0, max: 800 %>
+
+<% (0..7).each do |i| %>
+   <h1>CPU<%= i %>:</h1>
+   <%= line_chart @cpu_graphs[i], min: 0, max: 100 %>
+<% end %>
 
 <p>
   <strong>Experiment at:</strong>

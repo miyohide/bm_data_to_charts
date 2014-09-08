@@ -11,6 +11,8 @@ class ExperimentsController < ApplicationController
   # GET /experiments/1.json
   def show
      @graph_data = @experiment.memory_datas
+     @total_cpu_graph = @experiment.total_cpu_datas
+     @cpu_graphs = (0..7).map { |i| @experiment.cpu_datas(i) }
   end
 
   # GET /experiments/new
