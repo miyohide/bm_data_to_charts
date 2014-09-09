@@ -11,7 +11,11 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'spring',        group: :development
+group :development do
+   gem 'spring'
+   gem 'guard-rails'
+   gem 'guard-rspec', require: false
+end
 
 gem "chartkick"
 gem "paperclip", "~> 4.1"
@@ -21,6 +25,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'momentjs-rails', '>= 2.8.1'
 gem 'bootstrap3-datetimepicker-rails', '~> 3.1.2'
+gem 'rubyzip', '>= 1.0.0'
+gem 'zip-zip'
+gem 'comma', '~> 3.2.1'
 
 group :development, :test do
    gem "rspec-rails", "~> 2.14.0"
