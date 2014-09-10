@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'paperclip/matchers'
 require 'shoulda/matchers'
+require 'sidekiq/testing'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -43,4 +44,17 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include Paperclip::Shoulda::Matchers
+
+  config.before(:each) do |example_method|
+     example = example_method.example
+     if example.metadata[:sidekiq] == :fake
+        Sidekiq::Testing.fake!
+     elsif example.metadata[:sidekiq] == :inline
+        Sidekiq::Testing.inline!
+     elsif example.metadata[:type] == :acceptance
+        Sidekiq::Testing.inline!
+     else
+        Sidekiq::Testing.fake!
+     end
+  end
 end
