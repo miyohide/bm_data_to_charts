@@ -14,6 +14,14 @@ describe CsvParser do
          it "create ExperimentDetail record." do
             expect(@experiment.experiment_details.size).to eq 1
          end
+
+         context "first experiment details" do
+            let(:details) { @experiment.experiment_details.first }
+
+            it "dstat_date is valid." do
+               expect(details.dstat_date.to_s).to eq "2014-08-30 18:12:44 +0900"
+            end
+         end
       end
    end
 end
