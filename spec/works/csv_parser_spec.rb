@@ -21,6 +21,38 @@ describe CsvParser do
             it "dstat_date is valid." do
                expect(details.dstat_date.to_s).to eq "2014-08-30 18:12:44 +0900"
             end
+
+            it "cpu0 is valid." do
+               expect(details.cpu0).to eq 11.983
+            end
+
+            it "cpu1 is valid." do
+               expect(details.cpu1).to eq 3.452
+            end
+
+            it "cpu2 is valid." do
+               expect(details.cpu2).to eq 3.118
+            end
+
+            it "cpu3 is valid." do
+               expect(details.cpu3).to eq 9.537
+            end
+
+            it "cpu4 is valid." do
+               expect(details.cpu4).to eq 2.924
+            end
+
+            it "cpu5 is valid." do
+               expect(details.cpu5).to eq 2.997
+            end
+
+            it "cpu6 is valid." do
+               expect(details.cpu6).to eq 2.326
+            end
+
+            it "cpu7 is valid." do
+               expect(details.cpu7).to eq 2.348
+            end
          end
       end
    end
