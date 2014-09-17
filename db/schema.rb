@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806130919) do
+ActiveRecord::Schema.define(version: 20140917144830) do
 
   create_table "experiment_details", force: true do |t|
     t.integer  "experiment_id"
@@ -42,5 +42,17 @@ ActiveRecord::Schema.define(version: 20140806130919) do
     t.integer  "dstat_data_file_size"
     t.datetime "dstat_data_updated_at"
   end
+
+  create_table "productionlog_results", force: true do |t|
+    t.datetime "logging_at"
+    t.float    "total_time"
+    t.float    "view_time"
+    t.float    "model_time"
+    t.integer  "experiment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "productionlog_results", ["experiment_id"], name: "index_productionlog_results_on_experiment_id"
 
 end
