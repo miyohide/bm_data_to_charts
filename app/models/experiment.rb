@@ -20,7 +20,19 @@ class Experiment < ActiveRecord::Base
    end
 
    def total_cpu_datas
-      self.experiment_details.map { |ed| [ed.dstat_date, ed.cpu0 + ed.cpu1 + ed.cpu2 + ed.cpu3+ ed.cpu4 + ed.cpu5 + ed.cpu6 + ed.cpu7] }
+      self.experiment_details.map { |ed| [ed.dstat_date, ed.total_cpu_data] }
+   end
+
+   def attach_file_path
+      self.dstat_data.path
+   end
+
+   def attach_dir_path
+      File.dirname(self.attach_file_path)
+   end
+
+   def dstat_file_path
+      File.join(self.attach_file_path, "dstat.csv")
    end
 end
 
