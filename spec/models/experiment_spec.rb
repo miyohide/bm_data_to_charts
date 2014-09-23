@@ -11,4 +11,12 @@ describe Experiment do
 
    it { should have_many(:experiment_details).dependent(:destroy) }
 
+   describe "use valid sample data" do
+      before do
+         @experiment = FactoryGirl.create(:experiment)
+      end
+
+      it { expect(@experiment.attach_file_path).to eq "#{Rails.root}/public/system/experiments/dstat_data/000/000/#{"%03d" % @experiment.id}/original/#{@experiment.dstat_data_file_name}" }
+
+   end
 end
